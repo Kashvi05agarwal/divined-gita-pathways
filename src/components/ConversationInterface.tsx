@@ -1,9 +1,7 @@
-
 import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
 import DivineParticles from "./DivineParticles";
@@ -27,11 +25,8 @@ interface DivineMessageProps extends MessageProps {
 }
 
 const generateRandomResponse = (deityId: string, userMessage: string): DivineResponse => {
-  // In a real app, this would be an API call to a backend that processes the user's message
-  // and returns a meaningful response based on NLP and the deity's personality
   const lowerMessage = userMessage.toLowerCase();
   
-  // Simple keyword matching for this demo
   let shlokaCategory = "guidance";
   let pathType: SpiritualPath = "Bhakti";
   
@@ -49,16 +44,13 @@ const generateRandomResponse = (deityId: string, userMessage: string): DivineRes
     pathType = "Dhyana";
   }
   
-  // Get a random shloka from the category
   const randomShlokaIndex = Math.floor(Math.random() * shlokas[shlokaCategory].length);
   const shloka = shlokas[shlokaCategory][randomShlokaIndex];
   
-  // Get a random story for the deity
   const stories = divineStories[deityId] || divineStories["krishna"];
   const randomStoryIndex = Math.floor(Math.random() * stories.length);
   const story = stories[randomStoryIndex];
   
-  // Generate guidance based on the path
   let guidance = "";
   switch(pathType) {
     case "Bhakti":
@@ -75,7 +67,6 @@ const generateRandomResponse = (deityId: string, userMessage: string): DivineRes
       break;
   }
   
-  // Generate a response based on the deity and user message
   let response = "";
   
   if (deityId === "krishna") {
@@ -192,7 +183,6 @@ const ConversationInterface = ({ selectedDeity, onBack }: ConversationInterfaceP
   const scrollAreaRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
-    // Scroll to bottom when new messages arrive
     if (scrollAreaRef.current) {
       const scrollContainer = scrollAreaRef.current;
       scrollContainer.scrollTop = scrollContainer.scrollHeight;
@@ -202,7 +192,6 @@ const ConversationInterface = ({ selectedDeity, onBack }: ConversationInterfaceP
   const handleSendMessage = () => {
     if (!inputMessage.trim()) return;
     
-    // Add user message
     const userMessage = {
       isUser: true,
       content: inputMessage,
@@ -212,7 +201,6 @@ const ConversationInterface = ({ selectedDeity, onBack }: ConversationInterfaceP
     setMessages(prev => [...prev, userMessage]);
     setInputMessage("");
     
-    // Simulate deity response after a short delay
     setTimeout(() => {
       const divineResponse = generateRandomResponse(selectedDeity.id, inputMessage);
       
@@ -226,7 +214,6 @@ const ConversationInterface = ({ selectedDeity, onBack }: ConversationInterfaceP
       
       setMessages(prev => [...prev, deityMessage]);
       
-      // Show blessing effect after a short delay
       setTimeout(() => {
         setIsBlessing(true);
         setMessages(prev => 
@@ -237,7 +224,6 @@ const ConversationInterface = ({ selectedDeity, onBack }: ConversationInterfaceP
           )
         );
         
-        // Hide blessing effect after some time
         setTimeout(() => {
           setIsBlessing(false);
         }, 5000);

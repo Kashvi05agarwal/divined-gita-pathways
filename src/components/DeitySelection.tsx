@@ -47,15 +47,9 @@ const DeitySelection = ({ onSelectDeity }: DeitySelectionProps) => {
             </div>
 
             <div className="h-56 relative overflow-hidden flex items-center justify-center">
-              <img
-                src={deity.imagePath}
-                alt={deity.name}
-                className="h-full w-full object-contain transform transition-transform duration-300 group-hover:scale-110"
-                onError={(e) => {
-                  // Fallback image if the main image fails to load
-                  (e.target as HTMLImageElement).src = `https://via.placeholder.com/300x200/9B87F5/FFFFFF/?text=${deity.name}`;
-                }}
-              />
+              <div className={`h-32 w-32 rounded-full flex items-center justify-center bg-${deity.color} text-white text-5xl font-bold`}>
+                {deity.name.charAt(0)}
+              </div>
               
               {/* Divine aura effect */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -92,14 +86,9 @@ const DeitySelection = ({ onSelectDeity }: DeitySelectionProps) => {
             <div className="p-6">
               <div className="flex mb-4">
                 <div className="w-1/3">
-                  <img 
-                    src={selectedDeityInfo.imagePath} 
-                    alt={selectedDeityInfo.name}
-                    className="rounded-lg shadow-md"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = `https://via.placeholder.com/200x200/9B87F5/FFFFFF/?text=${selectedDeityInfo.name}`;
-                    }}
-                  />
+                  <div className={`h-32 w-32 rounded-full flex items-center justify-center bg-${selectedDeityInfo.color} text-white text-5xl font-bold mx-auto`}>
+                    {selectedDeityInfo.name.charAt(0)}
+                  </div>
                 </div>
                 <div className="w-2/3 pl-4">
                   <h4 className="font-bold mb-2">Divine Attributes:</h4>

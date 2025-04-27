@@ -1,4 +1,3 @@
-
 export type SpiritualPath = "Bhakti" | "Karma" | "Jnana" | "Dhyana";
 
 export interface DeityInfo {
@@ -6,7 +5,6 @@ export interface DeityInfo {
   name: string;
   title: string;
   description: string;
-  imagePath: string;
   color: string;
 }
 
@@ -34,7 +32,6 @@ export const deities: DeityInfo[] = [
     name: "Krishna",
     title: "The Supreme Personality of Godhead",
     description: "Lord Krishna, the divine charioteer who delivered the wisdom of the Bhagavad Gita.",
-    imagePath: "https://i.imgur.com/KXEqPgG.png", // Krishna playing flute in blue hue
     color: "divine-purple",
   },
   {
@@ -42,7 +39,6 @@ export const deities: DeityInfo[] = [
     name: "Hanuman",
     title: "The Embodiment of Devotion and Strength",
     description: "Lord Hanuman represents unwavering devotion, incredible strength, and selfless service.",
-    imagePath: "https://i.imgur.com/qwxYqbe.png", // Powerful Hanuman ji pose
     color: "divine-orange",
   },
   {
@@ -50,7 +46,6 @@ export const deities: DeityInfo[] = [
     name: "Lakshmi",
     title: "Goddess of Wealth and Prosperity",
     description: "Goddess Lakshmi bestows wealth, prosperity, and abundance to her devotees.",
-    imagePath: "https://i.imgur.com/D5mVIj2.png", // Maa Lakshmi on lotus
     color: "divine-gold",
   },
   {
@@ -58,7 +53,6 @@ export const deities: DeityInfo[] = [
     name: "Ganesh",
     title: "Remover of Obstacles",
     description: "Lord Ganesh, with his elephant head, is worshipped before beginning any new endeavor.",
-    imagePath: "https://i.imgur.com/XyJYHYk.png", // Lord Ganesha blessing pose
     color: "divine-crimson",
   }
 ];
