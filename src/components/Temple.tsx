@@ -1,15 +1,14 @@
-
 import { useState } from "react";
 import { DeityInfo } from "@/data/deities";
 import DeitySelection from "./DeitySelection";
 import ConversationInterface from "./ConversationInterface";
-import { Lotus, Temple as TempleIcon } from "lucide-react";
+import { Flower, Home } from "lucide-react";
 
 const TempleEntrance = ({ onEnterTemple }: { onEnterTemple: () => void }) => {
   return (
     <div className="min-h-[70vh] flex flex-col items-center justify-center mandala-bg animate-divine-blessing">
       <div className="text-divine-purple mb-4">
-        <Lotus className="h-16 w-16 mx-auto" />
+        <Flower className="h-16 w-16 mx-auto" />
       </div>
       
       <h1 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-divine-purple to-divine-purple-dark">
@@ -24,7 +23,7 @@ const TempleEntrance = ({ onEnterTemple }: { onEnterTemple: () => void }) => {
         onClick={onEnterTemple}
         className="px-8 py-3 bg-gradient-to-r from-divine-purple to-divine-purple-dark text-white rounded-full text-lg font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 flex items-center"
       >
-        <TempleIcon className="mr-2 h-5 w-5" />
+        <Home className="mr-2 h-5 w-5" />
         Enter Divine Temple
       </button>
       
