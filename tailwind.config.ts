@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,18 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				divine: {
+					purple: "#9b87f5",
+					"purple-dark": "#7E69AB",
+					"purple-light": "#E5DEFF",
+					orange: "#F97316",
+					gold: "#FFD700",
+					crimson: "#DC143C"
 				}
+			},
+			fontFamily: {
+				sanskrit: ['Poppins', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +96,37 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'divine-blessing': {
+					'0%': {
+						opacity: '0',
+						transform: 'scale(0.95) translateY(10px)'
+					},
+					'50%': {
+						opacity: '1',
+						transform: 'scale(1.05) translateY(-5px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'scale(1) translateY(0)'
+					}
+				},
+				'particle-float': {
+					'0%, 100%': {
+						transform: 'translateY(0) rotate(0deg)',
+						opacity: '0.8'
+					},
+					'50%': {
+						transform: 'translateY(-15px) rotate(180deg)',
+						opacity: '0.2'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'divine-blessing': 'divine-blessing 1.5s ease-out forwards',
+				'particle-float': 'particle-float 4s ease-in-out infinite'
 			}
 		}
 	},
