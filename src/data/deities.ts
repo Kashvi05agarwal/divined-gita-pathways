@@ -33,8 +33,8 @@ export const deities: DeityInfo[] = [
     id: "krishna",
     name: "Krishna",
     title: "The Supreme Personality of Godhead",
-    description: "Lord Krishna, the eighth avatar of Vishnu, is the divine charioteer who delivered the wisdom of the Bhagavad Gita.",
-    imagePath: "/krishna.png",
+    description: "Lord Krishna, the divine charioteer who delivered the wisdom of the Bhagavad Gita.",
+    imagePath: "https://i.imgur.com/KXEqPgG.png", // Krishna playing flute in blue hue
     color: "divine-purple",
   },
   {
@@ -42,7 +42,7 @@ export const deities: DeityInfo[] = [
     name: "Hanuman",
     title: "The Embodiment of Devotion and Strength",
     description: "Lord Hanuman represents unwavering devotion, incredible strength, and selfless service.",
-    imagePath: "/hanuman.png",
+    imagePath: "https://i.imgur.com/qwxYqbe.png", // Powerful Hanuman ji pose
     color: "divine-orange",
   },
   {
@@ -50,7 +50,7 @@ export const deities: DeityInfo[] = [
     name: "Lakshmi",
     title: "Goddess of Wealth and Prosperity",
     description: "Goddess Lakshmi bestows wealth, prosperity, and abundance to her devotees.",
-    imagePath: "/lakshmi.png",
+    imagePath: "https://i.imgur.com/D5mVIj2.png", // Maa Lakshmi on lotus
     color: "divine-gold",
   },
   {
@@ -58,7 +58,7 @@ export const deities: DeityInfo[] = [
     name: "Ganesh",
     title: "Remover of Obstacles",
     description: "Lord Ganesh, with his elephant head, is worshipped before beginning any new endeavor.",
-    imagePath: "/ganesh.png",
+    imagePath: "https://i.imgur.com/XyJYHYk.png", // Lord Ganesha blessing pose
     color: "divine-crimson",
   }
 ];
